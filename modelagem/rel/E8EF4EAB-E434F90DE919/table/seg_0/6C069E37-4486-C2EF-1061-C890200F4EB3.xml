@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6C069E37-4486-C2EF-1061-C890200F4EB3" name="TB_USUARIO">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>9384C37D-8433-1084-C99E-E1FAB9E04F66</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_USUARIO" id="FCC7A44B-721A-157E-ABF1-45742264272F">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>8F8E4368-90A6-8B29-BC56-D0B2028E01D6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EM_USUARIO" id="8B417ABD-C138-1008-9B4F-2CF746D1826C">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[EMAIL DO USUARIO - USERNAME]]></commentInRDBMS>
+<generatorID>3660DFEB-2BF2-D065-41F0-BD687A1341CA</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RL_USUARIO" id="7C549261-FA8B-96E7-FB80-66805EDADB12">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[USER ROLE]]></commentInRDBMS>
+<generatorID>A9647999-2B00-502E-E847-4AD21AB5F777</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<constraintName>CK_ROLE_USUARIO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="ADMIN" description=""/>
+<valueDef value="TUTOR" description=""/>
+<valueDef value="VETERINARIO" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FL_ATV_USUARIO" id="B3105BE9-CDFD-3330-B5DC-01B9BD26E4E5">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[FLAG USUARIO ATIVO]]></commentInRDBMS>
+<generatorID>1EFF2957-A281-2CB5-AA0C-4E72CCFE58FE</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEN_HASH_USUARIO" id="3CF51197-727A-A701-A562-D115FE0571C0">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[SENHA HASH]]></commentInRDBMS>
+<generatorID>AC480E00-0ABC-B985-7518-F6F22BB9E311</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6463327-68BF-9D1C-6AF5-3EC8A5800383" name="TB_USUARIO_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>F20A9741-9F0A-FB47-F410-8937A496BB24</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCC7A44B-721A-157E-ABF1-45742264272F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="278A9A66-5FD1-D3D5-FDEF-0AF79825376F" mainViewID="6A6913A9-FC32-281C-1BC6-C26D77B9A269">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:08:28 UTC</createdTime>
+<ownerDesignName>petlu-modelagem-db</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E1988778-1350-09A4-92A8-8B192951C7C3" name="TB_PRONTUARIO">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>B2219D2B-0DBC-5E5E-D676-F8FDD60D4163</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRONTUARIO" id="54B56C37-3FFF-29EA-1A70-77E60674564A">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>7C6367A3-31E2-21B9-D061-C976B05FF4A5</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPD_PRONTURARIO" id="AA071E34-5AC5-349A-0C3D-2D2317CCC292">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[DATA DA ULTIMA ATUALIZACAO NO PRONTUARIO]]></commentInRDBMS>
+<generatorID>0AEF5320-4E08-B38A-DB40-14405C80EE50</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_ANIMAL_ID_ANIMAL" id="EE947916-AC3E-94E7-B197-0BB448466EA7">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>718F845F-2454-0792-6582-61DDE1E3F951</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB4734BC-062C-843C-DC15-655076EA9817" referredColumn="B12D9831-BDAE-21F7-5A44-1DDACCE98C93"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0ACF2E45-885F-8EAF-3983-9886832317F4" name="TB_PRONTUARIO_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>73F05224-0BB5-C7F3-9501-72BAE9D568CD</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54B56C37-3FFF-29EA-1A70-77E60674564A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D3C2D3F-208F-5AE1-184C-5832D8E2B635" name="TB_PRONTUARIO__IDX">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FDF0D3E2-6582-0AAF-BCAB-F5874FEE2CC3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="EE947916-AC3E-94E7-B197-0BB448466EA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60563880-0DD3-7EBD-986F-6E09AA75B1B2" name="PRONTUARIO_ANIMAL_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>FDF0D3E2-6582-0AAF-BCAB-F5874FEE2CC3</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE947916-AC3E-94E7-B197-0BB448466EA7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

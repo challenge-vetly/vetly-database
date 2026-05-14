@@ -1,0 +1,201 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD190892-2857-A80A-8AFB-3F1EF5A32CAE" name="TB_CONSULTA">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>6936B160-53AA-2796-47A5-92275CEFE0A6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>5357E278-6E1E-E6DA-0EBC-4C0A302EBBCF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CONSULTA" id="2A7544ED-3A67-139D-1A02-A882D4153FAF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>FDCBF087-74D1-729B-3A59-D22287CF2EEF</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>44A8F71D-169B-19F8-1B19-138A87786755</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_CONSULTA" id="425BFD74-FB6A-926E-69CE-A8F5A8F22A56">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>B76E2A88-7FCB-4D39-95A8-08F2501E6511</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>BB7679E0-7572-3DD2-74A7-2F95C9B91104</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HR_CONSULTA" id="79CC808F-D364-6E7B-D4D6-EFE61B4179F5">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>6D982FD1-EEAE-7412-06E4-F78096F6E2FF</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>98DDB73D-FBFB-1C0B-BFD3-5102D24DA164</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ST_CONSULTA" id="54B29CCB-A15E-B032-F742-E95A9968BB62">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>BE4A1B32-E9FD-97A6-B0CE-C0316749E3AF</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>8C161927-E2CB-8334-B4ED-36448FC4BB00</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VL_CONSULTA" id="8867886D-CDF7-E2A6-B676-541887254477">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>B61E518C-4596-4F05-6DA6-979A3B7726B9</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>12BB2230-529E-D83A-8876-1E400AE7A94C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DS_OBSERVACAO" id="E4E9981C-3B3E-42B9-701D-202C9524CBCD">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>2CE171D7-B053-F7E6-8868-D3F1FC1D5363</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>16615380-9E00-22AF-9668-FDC79AD4E431</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_VETERINARIO_ID_VETERINARIO" id="F5206837-E266-EB85-87B1-8816B189185B">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>31F56C94-4541-8B6B-483B-D415CD974420</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>F65BAC76-DCA3-C046-7D33-A6C435CF95FC</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="592EABF3-8008-3148-4C45-A9512DCCFAA0" referredColumn="0770EA8B-5096-02D8-0E2D-B438B6D66CBA"/>
+</associations>
+</Column>
+<Column name="TB_ANIMAL_ID_ANIMAL" id="E454F107-536C-5CD1-CD1A-5AF14D9AE2BF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>C24BD1E7-E85F-E38F-B12A-A692A7B93225</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>9C15605E-0F0B-26FE-E904-EE682DFE8EAE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6803B701-24D7-B075-759C-035C5867B5A2" referredColumn="4396AFAB-7A3A-3242-3C3A-E8628DA5140B"/>
+</associations>
+</Column>
+<Column name="TB_PRONTUARIO_ID_PRONTUARIO" id="54E83312-3905-2AD2-E53A-69D245727DDE">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>6D39B930-383E-2506-A4A8-F371A983D0F9</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>DD5B1879-E83B-8ED9-1592-F5C047FEAD27</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17B278D7-E797-0155-4C7E-09B91602A92E" referredColumn="1CF1A7DC-6042-FC9A-E7B9-2DDBD3605899"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD3D32AD-92EF-4D52-9865-2A9786F65865" name="TB_CONSULTA_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>F0746A60-B285-A581-AA36-BC760C341E3F</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>58B43B80-B140-7240-2E60-0DE13018F7F2</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A7544ED-3A67-139D-1A02-A882D4153FAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1E1C50C-4278-89FE-3984-C87313491BE4" name="TB_CONSULTA__IDX">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>6A299D29-8274-A24C-1300-2C4F3F96BBA4</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54E83312-3905-2AD2-E53A-69D245727DDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CFD95B65-0E0E-D1A0-54D1-85C2B116E537" name="TB_CONSULTA_TB_PRONTUARIO_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>CEBBCF28-F26C-83B2-F0BE-5553CC09662A</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54E83312-3905-2AD2-E53A-69D245727DDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BA9835B-E0F0-FA7A-EB70-95E0C2637688" name="TB_CONSULTA_TB_ANIMAL_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>A5477304-9A8E-5010-3800-55AB724F25E6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E454F107-536C-5CD1-CD1A-5AF14D9AE2BF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9508275-977D-CED1-4896-F84B28F5BF8D" name="TB_CONSULTA_TB_VETERINARIO_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>B5615A64-9D72-4FA0-DE6E-0720E0CC53AC</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5206837-E266-EB85-87B1-8816B189185B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

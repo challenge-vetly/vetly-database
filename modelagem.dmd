@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelagem" id="7348DB08-EE63-316B-743D-0FF111F11BF7" version="3.5">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:08:28 UTC</createdTime>
+<ownerDesignName>petlu-modelagem-db</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7348DB08-EE63-316B-743D-0FF111F11BF7</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="6FF03E37-EF92-2651-1EFE-E42E7207AE0D">
+<designStoragePath>/home/gabriel/Projects/fiap/database/Modelo Logico SQL/Modelo Logico SQL</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

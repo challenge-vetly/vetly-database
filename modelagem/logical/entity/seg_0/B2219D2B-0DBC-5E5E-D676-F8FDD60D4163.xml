@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B2219D2B-0DBC-5E5E-D676-F8FDD60D4163" name="TB_PRONTUARIO">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>4341B4A5-EFD6-F13D-5505-FB45C9EEE7B4</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_PRONTUARIO" id="7C6367A3-31E2-21B9-D061-C976B05FF4A5">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>014303B7-9256-BD7A-18D2-B076E783EF53</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DT_UPD_PRONTURARIO" id="0AEF5320-4E08-B38A-DB40-14405C80EE50">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[DATA DA ULTIMA ATUALIZACAO NO PRONTUARIO]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>0FC7110F-CDC6-B188-B37D-7752BFB7711E</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_ANIMAL" id="718F845F-2454-0792-6582-61DDE1E3F951">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:51:33 UTC</createdTime>
+<generatorID>FDF0D3E2-6582-0AAF-BCAB-F5874FEE2CC3</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<referedAttribute>6068AD5B-3032-231A-5100-527876827D2C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="73F05224-0BB5-C7F3-9501-72BAE9D568CD" name="TB_PRONTUARIO PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>B6F0D9C1-4314-487F-6607-92155C54725C</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7C6367A3-31E2-21B9-D061-C976B05FF4A5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

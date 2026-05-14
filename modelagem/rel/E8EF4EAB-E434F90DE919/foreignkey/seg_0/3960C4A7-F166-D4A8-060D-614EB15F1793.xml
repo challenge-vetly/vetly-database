@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3960C4A7-F166-D4A8-060D-614EB15F1793" containerWithKeyObject="0A8F036D-4F3B-582C-9CC8-D0998915C1E7" localFKIndex="3655B63E-C2AD-3005-B9D6-FE89878390F6" name="EVOLUCAO_CLINICA_PRONTUARIO_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 01:12:54 UTC</createdTime>
+<generatorID>A8279475-D5C1-BA1E-8487-0D1344A2A5BC</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<referredTableLongName>TB_PRONTUARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E1988778-1350-09A4-92A8-8B192951C7C3</referredTableID>
+<keyObject>0ACF2E45-885F-8EAF-3983-9886832317F4</keyObject>
+<referredKeyID>0ACF2E45-885F-8EAF-3983-9886832317F4</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_PRONTUARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

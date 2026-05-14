@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6936B160-53AA-2796-47A5-92275CEFE0A6" name="TB_CONSULTA">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>0AC26FF6-6E6C-F268-606C-4B5CEECE5B4D</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_CONSULTA" id="FDCBF087-74D1-729B-3A59-D22287CF2EEF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>B0C958AB-50A4-3339-18B2-03B8C2DE0FB1</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DT_HR_CONSULTA" id="B76E2A88-7FCB-4D39-95A8-08F2501E6511">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>16B8A486-07A4-9756-F3DB-C69EAAECE21D</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ST_CONSULTA" id="BE4A1B32-E9FD-97A6-B0CE-C0316749E3AF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>C373C05E-FB46-77F9-288F-6DDF286852D2</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VL_CONSULTA" id="B61E518C-4596-4F05-6DA6-979A3B7726B9">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>4BAEA8A5-A804-4F8C-8C52-BD5FEEC2B14D</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OBS_CONSULTA" id="2CE171D7-B053-F7E6-8868-D3F1FC1D5363">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[OBSERVACOES DA CONSULTA]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>521FF4B7-95D9-DA5D-498D-4DB6FF379DC3</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_VETERINARIO" id="31F56C94-4541-8B6B-483B-D415CD974420">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>B5615A64-9D72-4FA0-DE6E-0720E0CC53AC</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>98E8454E-0A70-A31D-2B70-1057655109B7</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>2E9EC6E4-D3C1-9AC9-2E57-B9E8EC04F58A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_ANIMAL" id="C24BD1E7-E85F-E38F-B12A-A692A7B93225">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<generatorID>A5477304-9A8E-5010-3800-55AB724F25E6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>BBB42C0A-A2F2-0B19-FEC1-BE4992E18B43</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>6068AD5B-3032-231A-5100-527876827D2C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F0746A60-B285-A581-AA36-BC760C341E3F" name="TB_CONSULTA PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-13 01:14:21 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>DC1321DF-4D93-8E50-F7E0-390B6577D093</importedID>
+<engineerTo>
+<item key="E8EF4EAB-BDF9-2A8F-E715-E434F90DE919" value="true"/>
+<item key="D4063FFC-896F-EA41-605F-C7428237203D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FDCBF087-74D1-729B-3A59-D22287CF2EEF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
