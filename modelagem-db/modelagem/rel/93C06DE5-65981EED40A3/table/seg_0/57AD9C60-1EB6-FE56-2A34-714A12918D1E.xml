@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="57AD9C60-1EB6-FE56-2A34-714A12918D1E" name="TB_TUTOR">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>0528BF13-432A-57C0-EC02-797DBEB18054</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TUTOR" id="5ADEB947-7DA3-9834-ED30-56EEA1E3527D">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>1F8A2597-D7EB-6DE0-F45E-DFF2408D6FBD</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_TUTOR" id="C58B45EB-634B-5E3F-F8BB-C72C225555FA">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>A447BE2C-9BA0-DF70-5E9D-97DE5A38631A</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CPF_TUTOR" id="E82DA4F1-BAEE-6EF0-BD02-428649ECBDCC">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>F8CA7688-8E59-9498-5349-95DC16320385</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEL_TUTOR" id="5170F9F1-E8CE-992E-8039-A18AEB92A492">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>5AE247B6-5B25-54B1-CB87-0B007DDEA3B3</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_USR_ID_USUARIO" id="C6FD22C5-1897-FB88-F896-74C43209453C">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>28ED079E-C733-C60B-DB27-749DFD6CCA60</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18530F7E-9041-1020-241F-5267652ABCD0" referredColumn="216299DE-E4C6-4E1C-D708-B1776E3D6D6B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A59BE1D7-C8C9-C63F-66BE-8A4E6490BDBB" name="TB_TUTOR_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>865DE14C-0E5A-390F-09E4-A87898370FE6</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5ADEB947-7DA3-9834-ED30-56EEA1E3527D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="118DC83E-E755-F556-D86D-3C93DE07E872" name="TB_TUTOR__IDX">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>D1BD823B-8A8D-B938-4850-33EF63162BE7</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C6FD22C5-1897-FB88-F896-74C43209453C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="314DEBB5-6A9B-8A3E-7387-F92AA7739FB1" name="TB_TUTOR_TB_USUARIO_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>D1BD823B-8A8D-B938-4850-33EF63162BE7</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6FD22C5-1897-FB88-F896-74C43209453C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="50200B3F-DE0F-7980-7410-C49963FDB032" name="TB_USUARIO">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>9384C37D-8433-1084-C99E-E1FAB9E04F66</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_USUARIO" id="45A609D8-82F9-EB71-A7EB-D95346A610F2">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>8F8E4368-90A6-8B29-BC56-D0B2028E01D6</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EM_USUARIO" id="71663CEF-EA35-4042-F249-3707EC9811C6">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[EMAIL DO USUARIO - USERNAME]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>3660DFEB-2BF2-D065-41F0-BD687A1341CA</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RL_USUARIO" id="4DE3D777-A989-C7B5-858B-52D957D57DB7">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[USER ROLE]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>A9647999-2B00-502E-E847-4AD21AB5F777</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<constraintName>CK_ROLE_USUARIO</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="ADMIN" description=""/>
+<valueDef value="TUTOR" description=""/>
+<valueDef value="VETERINARIO" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FL_ATV_USUARIO" id="F10C7CEA-008C-7748-6AF8-B3D6FFC7815A">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[FLAG USUARIO ATIVO]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>1EFF2957-A281-2CB5-AA0C-4E72CCFE58FE</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SEN_HASH_USUARIO" id="DC5CC8C7-51AF-F2E0-CFDC-5CB04E841F75">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[SENHA HASH]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>AC480E00-0ABC-B985-7518-F6F22BB9E311</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0F54BD59-EC9F-98CF-928C-8E72488C908D" name="TB_USUARIO PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>F20A9741-9F0A-FB47-F410-8937A496BB24</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>45A609D8-82F9-EB71-A7EB-D95346A610F2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

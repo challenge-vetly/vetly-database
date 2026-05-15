@@ -1,13 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelagem" id="7348DB08-EE63-316B-743D-0FF111F11BF7" version="3.5">
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelagem" id="06DEB3A9-F6F4-FC65-8910-796FC5F81699" version="3.5">
 <createdBy>gabriel</createdBy>
-<createdTime>2026-05-13 01:08:28 UTC</createdTime>
-<ownerDesignName>petlu-modelagem-db</ownerDesignName>
+<createdTime>2026-05-14 20:58:01 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
 <capitalNames>false</capitalNames>
-<designId>7348DB08-EE63-316B-743D-0FF111F11BF7</designId>
+<designId>06DEB3A9-F6F4-FC65-8910-796FC5F81699</designId>
 <usedDesignStorageDescriptors>
 <designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="6FF03E37-EF92-2651-1EFE-E42E7207AE0D">
 <designStoragePath>/home/gabriel/Projects/fiap/database/Modelo Logico SQL/Modelo Logico SQL</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="7348DB08-EE63-316B-743D-0FF111F11BF7">
+<designStoragePath>/home/gabriel/Projects/fiap/petly/petly-database/modelagem-db/modelagem</designStoragePath>
 </designDescr>
 </usedDesignStorageDescriptors>
 </OSDM_Design>

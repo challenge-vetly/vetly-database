@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DAE0102D-3164-A84A-8CD3-EB3FA1736483" name="TB_ESPECIE">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>7A14AB06-B67C-95E3-58B6-A3953FF6E2CE</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ESPECIE" id="EE6A3AA2-68A8-5A24-82E4-BC546280CFF5">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>DB86D008-2B27-6ACD-43A7-7548581BB158</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_ESPECIE" id="B97A00CF-C999-4311-7A2E-6F2FB546594C">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[NOME DA ESPECIE]]></commentInRDBMS>
+<generatorID>FDBE2CDE-F604-EE02-6E80-9DAF6EA50DAD</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<constraintName>CK_ESPECIE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="ANFIBIO" description=""/>
+<valueDef value="AVE" description=""/>
+<valueDef value="CAO" description=""/>
+<valueDef value="EQUIDEO" description=""/>
+<valueDef value="GATO" description=""/>
+<valueDef value="MAMIFERO" description=""/>
+<valueDef value="PEIXE" description=""/>
+<valueDef value="REPTIL" description=""/>
+</listOfValues>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D38747E3-5A18-404A-5FD7-80CFC47C18C4" name="TB_ESPECIE_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>0F18AA9C-16AF-43BA-14DF-22DCCC8A24A4</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE6A3AA2-68A8-5A24-82E4-BC546280CFF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

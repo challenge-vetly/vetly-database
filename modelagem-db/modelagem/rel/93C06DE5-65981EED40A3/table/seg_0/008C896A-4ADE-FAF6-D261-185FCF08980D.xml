@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="008C896A-4ADE-FAF6-D261-185FCF08980D" name="TB_VETERINARIO_ESPECIE">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>E0BED66F-F636-E4A9-AC42-8EC4F4607D81</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_VETERINARIO_ESPECIE" id="90746E0F-CE6E-96E5-8D29-78A71947DA10">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>E4580515-7F9A-F3C4-6917-94C993C497EB</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_VETERINARIO_ID_VETERINARIO" id="C199CC34-8244-50C2-DB99-AAA36A8FE6FF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>BDA7FA44-FA3C-17D5-2DCA-91ABF37D6689</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD2FD2BD-0D21-2794-01AF-CE18208836E9" referredColumn="364BC5E6-BACE-F103-2BA0-50E36C564EBE"/>
+</associations>
+</Column>
+<Column name="TB_ESPECIE_ID_ESPECIE" id="04650E4C-0BB1-7388-4F95-6E6F69B4E2A0">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>3DEB89F8-2AFF-8285-6FCA-36B13F1CCEB7</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78A4A285-1C30-376A-103A-E15C1AE6DB96" referredColumn="EE6A3AA2-68A8-5A24-82E4-BC546280CFF5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="926CA304-29D2-06AE-A51E-D63725D92085" name="TB_VETERINARIO_ESPECIE_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>8C5BDE77-EC28-4C8C-7EF2-5E7382BEC54B</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90746E0F-CE6E-96E5-8D29-78A71947DA10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A26402E-0204-1ECD-7371-A630877BF807" name="TB_VET_ESPECIE_TB_VET_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>5E83018F-AE99-E38E-F381-CEB3BDB91AA0</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C199CC34-8244-50C2-DB99-AAA36A8FE6FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45828123-5C71-E945-F63E-88B74E42FA3F" name="TB_VET_ESPECIE_TB_ESPECIE_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 23:53:13 UTC</createdTime>
+<generatorID>69281010-0BDB-B6AF-2239-88FB2EAB38EB</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04650E4C-0BB1-7388-4F95-6E6F69B4E2A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="BE58D926-990D-48F5-D164-F3F3B5B840F3">
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="743B484C-DCE2-5A2A-6F10-3E5F4870A511">
 <createdBy>gabriel</createdBy>
-<createdTime>2026-05-13 01:08:28 UTC</createdTime>
-<ownerDesignName>petlu-modelagem-db</ownerDesignName>
+<createdTime>2026-05-14 20:58:02 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
 <shouldBeOpen>false</shouldBeOpen>
 </BusinessInfoDesign>

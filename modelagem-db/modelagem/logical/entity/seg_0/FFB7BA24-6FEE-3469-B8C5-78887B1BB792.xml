@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FFB7BA24-6FEE-3469-B8C5-78887B1BB792" name="TB_VETERINARIO">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>7FD40AEA-43CA-4481-FE2E-1D1E570A5FC3</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_VETERINARIO" id="3D10D430-DD37-69B8-CF38-919C82137BD6">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>2E9EC6E4-D3C1-9AC9-2E57-B9E8EC04F58A</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NM_VETERINARIO" id="964ECF01-FCF6-0099-8B52-C96C5D32FADF">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>34D46D4F-07AA-6CB2-3118-8BAB98325824</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CPF_VETERINARIO" id="4B02C98C-309D-EA56-2C9F-9AA3D454810B">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[CPF DO VETERINARIO]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>441BE2D7-6FCA-8416-C3AD-C1F461522881</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11 CHAR</dataTypeSize>
+<ownDataTypeParameters>11 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CRMV_VETERINARIO" id="73942E48-85C4-6821-E3BC-146AF9EE9D7E">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>4A0D98EA-EDEF-05D0-726F-6208A26EFD42</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TEL_VETERINARIO" id="AE74C0AD-2FB0-826C-D6D5-233D53C92146">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>946EF8DE-8948-AB58-4E22-C17ED4803ABC</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="UF_ATD_VETERINARIO" id="A5543BA9-6F0B-43B3-0D0D-CE8E5CB40D36">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[UNIDADE FEDERATIVA DE ATENDIMENTO]]></commentInRDBMS>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>3FCA4A63-74F5-BD47-AE30-4B0E8631B182</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2 CHAR</dataTypeSize>
+<ownDataTypeParameters>2 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_USUARIO" id="E9183DA4-7623-2C5E-6338-D5264DFC7B11">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<generatorID>7108369A-0ABE-B152-58CA-5722075FC08F</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>5C280C18-7168-2F76-3A23-63F88517B82A</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<referedAttribute>45A609D8-82F9-EB71-A7EB-D95346A610F2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="63F55819-1D7D-448A-48AB-1175678432D0" name="TB_VETERINARIO PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-14 20:58:45 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>91CB6FC8-BFDF-C80A-AC7E-76BB605CACC4</importedID>
+<engineerTo>
+<item key="93C06DE5-DCDC-6364-ABD2-65981EED40A3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3D10D430-DD37-69B8-CF38-919C82137BD6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
