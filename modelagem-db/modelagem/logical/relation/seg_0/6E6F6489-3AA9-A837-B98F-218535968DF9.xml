@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CONSULTA_EVO_CLNC" directorySegmentName="seg_0" id="6E6F6489-3AA9-A837-B98F-218535968DF9">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 00:42:55 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>29C6C109-F0E1-38F3-2FD1-C0A974437B12</importedID>
+<engineerTo>
+<item key="BA921BE8-8722-B8AA-1BEA-E0115A0DB4E3" value="true"/>
+</engineerTo>
+<sourcePk>0647E8A8-0DED-9C29-90C4-073C297CD32D</sourcePk>
+<dominantRole>619F9438-FF46-55FF-45DB-01B35CE4D64B</dominantRole>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>619F9438-FF46-55FF-45DB-01B35CE4D64B</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>BE8F2E5C-EFAD-7C53-1CFC-5C2F2EC42FC8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

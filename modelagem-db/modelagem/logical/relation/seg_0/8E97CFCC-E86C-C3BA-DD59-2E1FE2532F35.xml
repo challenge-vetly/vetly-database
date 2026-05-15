@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EXAME_PRONTUARIO" directorySegmentName="seg_0" id="8E97CFCC-E86C-C3BA-DD59-2E1FE2532F35">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 00:42:55 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>FDBC594C-DC1A-7D29-40A7-B190F1F329CD</importedID>
+<engineerTo>
+<item key="BA921BE8-8722-B8AA-1BEA-E0115A0DB4E3" value="true"/>
+</engineerTo>
+<sourcePk>E66556EF-287F-2216-5639-7CCCCA99C3F0</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CAFB5A9C-7508-07DA-A055-DC3D13F4652E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>37B279C4-F121-A945-F053-38BFDEACBF24</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

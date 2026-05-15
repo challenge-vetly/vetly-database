@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FC036659-4D2C-1C42-8A2A-98B6CA89415A" name="TB_EVOLUCAO_CLINICA">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>BE8F2E5C-EFAD-7C53-1CFC-5C2F2EC42FC8</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_EVOLUCAO_CLINICA" id="CFA214F3-FD79-976A-487E-512F337A1D79">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>489C612E-EEFE-BE65-8FA1-CA5E06C7CEF0</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ANT_EVOLUCAO_CLINICA" id="CD5712BC-418C-31D6-261E-921E73401C2A">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[ANOTACOES DA EVOLUCAO CLINICA]]></commentInRDBMS>
+<generatorID>1538A38D-D1E8-D76E-7DCE-22C4FF0CA219</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10000 CHAR</dataTypeSize>
+<ownDataTypeParameters>10000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_CONSULTA_ID_CONSULTA" id="BE62DBFE-9629-9BDF-F4D2-6956B765C664">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>5FF77743-D30C-2C50-895B-B690F6B7DA5A</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F3AE791-3020-5FF2-AECC-02D7124743EB" referredColumn="9672B639-A9EF-A1B7-5600-4BC94072A06D"/>
+</associations>
+</Column>
+<Column name="TB_PRONTUARIO_ID_PRONTUARIO" id="BBF42524-1C58-4153-B359-F9C9CDF8FC79">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>94FA4102-2D87-6CF6-78EB-ADFFAE95974E</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2A6EEBA-7265-F8F6-5DBF-11B58B81F362" referredColumn="4420B998-39B8-903B-E350-D5D08FD5117B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79D520CC-BCD3-8D46-066F-B06EF9A1275E" name="TB_EVOLUCAO_CLINICA_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>27806E33-175C-6103-63FA-037ACA21F4A8</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFA214F3-FD79-976A-487E-512F337A1D79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="130FF533-7F86-DE1A-C4EA-0AD6998A8DC1" name="TB_EVOLUCAO_CLINICA__IDX">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6E6F6489-3AA9-A837-B98F-218535968DF9</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="BE62DBFE-9629-9BDF-F4D2-6956B765C664"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6B0DD415-A98C-BA4F-0D9A-0CDD02ACB84B" name="TB_EVO_CLNC_TB_CONSULTA_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>6E6F6489-3AA9-A837-B98F-218535968DF9</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE62DBFE-9629-9BDF-F4D2-6956B765C664"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C42727A1-5781-0921-45F5-1A67D201666B" name="TB_EVO_CLNC_TB_PRONTUARIO_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>4DAC2208-ACA8-7CCD-D339-7C71DE91242D</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBF42524-1C58-4153-B359-F9C9CDF8FC79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

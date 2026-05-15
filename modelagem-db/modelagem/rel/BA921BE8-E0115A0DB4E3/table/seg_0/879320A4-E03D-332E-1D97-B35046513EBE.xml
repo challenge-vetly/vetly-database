@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="879320A4-E03D-332E-1D97-B35046513EBE" name="TB_VETERINARIO_ESPECIE">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>90FCBF58-0EA2-1E18-174B-D91E532F9477</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_VETERINARIO_ESPECIE" id="99D32B3A-596E-AD66-56FE-55E024B70423">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>D049AF81-7941-E151-3FC1-2139E0129984</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_VETERINARIO_ID_VETERINARIO" id="B191888E-9192-3D6A-13D9-2A2AB4B41B06">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>73449A27-10FE-992F-9136-A2343D33E3F7</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CA3B952-A6BA-1F83-8637-B37AE14B3607" referredColumn="A7EACA87-6130-6FF1-5C3F-B134D3F1857F"/>
+</associations>
+</Column>
+<Column name="TB_ESPECIE_ID_ESPECIE" id="F2637BDF-5D85-44B5-EC7C-750DB26506A9">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>0149566D-93E1-B87F-21A8-081A884AAA52</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C433DDD4-370C-D7A3-BEEC-093CD6AD73B5" referredColumn="6CC08408-A17F-8978-D17B-5563B7F7625D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="925AE490-E889-9D6F-AAC7-7978EA777D7B" name="TB_VETERINARIO_ESPECIE_PK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>02124350-8AF4-588B-20BE-81710D2FE630</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99D32B3A-596E-AD66-56FE-55E024B70423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BDCC4894-F8B7-BC4D-79A4-13466BDFCF00" name="TB_VET_ESPECIE_TB_ESPECIE_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>CA0C4981-CA97-B482-9E21-49C4EBFDBB11</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F2637BDF-5D85-44B5-EC7C-750DB26506A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3281425D-D599-0DD5-7293-C99C3DD969F4" name="TB_VET_ESPECIE_TB_VET_FK">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 01:24:37 UTC</createdTime>
+<generatorID>34BB3417-C109-3273-0EDF-3EFA8B6DBE60</generatorID>
+<ownerDesignName>modelagem</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B191888E-9192-3D6A-13D9-2A2AB4B41B06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

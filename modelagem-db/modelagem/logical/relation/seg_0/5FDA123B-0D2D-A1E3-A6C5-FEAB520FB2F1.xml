@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ANML_CONSULTA" directorySegmentName="seg_0" id="5FDA123B-0D2D-A1E3-A6C5-FEAB520FB2F1">
+<createdBy>gabriel</createdBy>
+<createdTime>2026-05-15 00:42:55 UTC</createdTime>
+<ownerDesignName>modelagem</ownerDesignName>
+<importedID>F15FC646-D561-22A0-908F-20DAC0042BC0</importedID>
+<engineerTo>
+<item key="BA921BE8-8722-B8AA-1BEA-E0115A0DB4E3" value="true"/>
+</engineerTo>
+<sourcePk>288712CE-FE18-4BCD-C64E-6903AEA4C625</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>55805868-1ACF-522C-2DFC-E8ACFD1ACC56</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>619F9438-FF46-55FF-45DB-01B35CE4D64B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
