@@ -716,3 +716,8 @@ ALTER TABLE TB_PRONTUARIO ADD CONSTRAINT TB_PRONTUARIO_ORIGINAL_FK FOREIGN KEY
 -- 
 -- ERRORS                                   0
 -- WARNINGS                                 0
+-- ============================================================================
+-- V9 (seed de TB_ESPECIE/TB_ESPECIALIDADES_VET) e V10 (pacotes PKG_VETLY_*, TB_AUDITORIA,
+-- TRG_AUD_CONSULTA) nao alteram as tabelas acima; ver src/main/resources/db/migration/ e
+-- database/scripts/. Toda migration nova que altere tabelas deve ser replicada aqui.
+-- ============================================================================

@@ -1,487 +1,146 @@
-# Documentação de Arquitetura — Projeto Vetly (Parceria Clyvo Vet)
+# Banco de Dados — Sprint 4 (Mastering Relational and Non-Relational Database)
 
-## Visão Geral do Projeto
+Entrega final de Banco de Dados do Challenge Vetly. Evolui a Sprint 3 (funções, procedures e
+trigger soltos, em schema autocontido) para **objetos empacotados no schema real**, consumidos
+pelo painel Java (repositório [`mvc-vetly-java`](https://github.com/Duartegdm/vetly-mvc)), e acrescenta a exportação **Oracle → JSON → MongoDB**.
 
-O projeto Vetly foi desenvolvido como uma solução acadêmica voltada para clínicas veterinárias, com foco principal em melhorar a experiência tanto dos médicos veterinários quanto dos tutores durante toda a jornada clínica.
+## O que mudou em relação à Sprint 3
 
-A proposta da plataforma consiste em reduzir a fricção operacional existente antes, durante e após as consultas veterinárias, aumentando a eficiência do atendimento, a qualidade do acompanhamento clínico e a fidelização dos clientes.
+| Sprint 3 | Sprint 4 |
+|---|---|
+| Objetos soltos, em scripts que recriam suas próprias tabelas | **Pacotes PL/SQL** no schema real (o mesmo que o Java usa) |
+| Saída por `DBMS_OUTPUT` (só útil no SQL Developer) | `SYS_REFCURSOR` e `CLOB` — qualquer cliente (Java, .NET) consome |
+| `TB_AUDITORIA` só no schema de demonstração | `TB_AUDITORIA` e a trigger entregues por **migration Flyway V10** |
+| JSON apenas impresso | **Dataset JSON** exportado e **importado no MongoDB** |
 
-A estratégia de negócio do projeto está baseada em três pilares principais:
+## Pacotes e objetos
 
-* Redução da carga operacional do veterinário;
-* Melhoria da experiência do tutor;
-* Aumento da recorrência de consultas e, consequentemente, da receita da empresa.
+| Objeto | Conteúdo | Substitui (Sprint 3) |
+|---|---|---|
+| `PKG_VETLY_LOG` | `registrar` — grava em `TB_LOG_ERRO` em transação autônoma; nunca propaga erro | `SP_REGISTRA_LOG` |
+| `PKG_VETLY_VALIDACAO` | `fn_valida_cpf` — dígito verificador módulo 11 | `FN_VALIDA_CPF` |
+| `PKG_VETLY_JSON` | `fn_monta_json_animal`, `fn_dataset_animais_json(formato, tutor)` — animal com tutor e consultas embutidos | `FN_MONTA_JSON_ANIMAL`, `PRC_LISTA_ANIMAIS_TUTORES_JSON` |
+| `PKG_VETLY_RELATORIO` | `prc_consultas_vet_status(status, OUT cursor)` — detalhe, subtotal por veterinário e total geral (`ROLLUP`) | `PRC_RELATORIO_CONSULTAS_VET_STATUS` |
+| `PKG_VETLY_CARGA` | 16 procedures `prc_ins_*` | `SP_INS_*` (de `procedures/procedures_carga.sql`) |
+| `TRG_AUD_CONSULTA` | Auditoria DML de `TB_CONSULTA` em `TB_AUDITORIA` (trigger não pode ficar em pacote; delega ao `PKG_VETLY_LOG`) | idem |
 
-O sistema foi concebido desde o início pensando em escalabilidade, segurança e evolução contínua da plataforma.
+Tratamento de exceções: erros de contrato usam `RAISE_APPLICATION_ERROR` com código próprio
+(`-20001`, `-20005`, `-20011`, `-20012`, `-20021`, `-20022`); todo bloco `EXCEPTION` registra em
+`TB_LOG_ERRO` via `PKG_VETLY_LOG` e re-propaga. A trigger engole a própria falha de log para
+nunca bloquear a operação de negócio.
 
----
+## Integração com o Java (independente de ambiente)
 
-# Objetivos da Plataforma
+O painel Java → `RelatorioConsultasService` chama `PKG_VETLY_RELATORIO` por
+`SimpleJdbcCall`; a tela é `/mvc/relatorios/consultas`. Cada decisão abaixo existe para que o
+resultado **não mude conforme onde o Java foi publicado**:
 
-## Objetivos para o Médico Veterinário
+- **O schema viaja com a aplicação.** Os pacotes e a trigger chegam pela migration
+  `V10__pacotes_plsql_auditoria.sql` (`migrations/` aqui; `src/main/resources/db/migration/` no Java; gerada de `scripts/01..05` por `gerar-migration.sh`). Qualquer ambiente —
+  Web App, ACI, máquina local, schema novo ou existente — recebe os objetos quando o Flyway roda.
+- **Sem dependência de servidor.** Nada usa `UTL_FILE`, `DIRECTORY`, `DBMS_OUTPUT` nem caminho de
+  arquivo no host do Oracle. O JSON volta como `CLOB` e é gravado pelo cliente.
+- **Sem dependência de configuração regional.** Números e datas usam máscaras fixas
+  (`NLS_NUMERIC_CHARACTERS='.,'`, `YYYY-MM-DD"T"HH24:MI:SS`). Testado com `NLS_LANG` brasileiro
+  (decimal = vírgula): o JSON continua com ponto decimal.
+- **Conexão só por variável de ambiente** (`SPRING_DATASOURCE_URL/USERNAME/PASSWORD`).
+- **Chamada sem leitura do dicionário de dados** (`withoutProcedureColumnMetaDataAccess`): funciona
+  com o usuário dono do schema, com sinônimo ou só com `EXECUTE`.
+- **MongoDB fora do caminho crítico.** O Java não depende de Mongo; o fluxo Oracle → JSON → Mongo
+  é um conjunto de scripts independentes.
 
-A solução busca facilitar o fluxo clínico do veterinário através de:
+## Arquivos
 
-* Centralização das informações clínicas;
-* Histórico completo do animal;
-* Solicitação digital de exames;
-* Organização do prontuário;
-* Redução de retrabalho operacional;
-* Analise automatica do prontuario do animal com uso de IA.
+| Pasta/arquivo | Conteúdo |
+|---|---|
+| `scripts/01..05` | `PKG_VETLY_LOG`, `_VALIDACAO`, `_JSON`, `_RELATORIO`, `TB_AUDITORIA` + trigger |
+| `scripts/06_pkg_vetly_carga.sql` | `PKG_VETLY_CARGA` (**gerado** de `procedures/procedures_carga.sql`) |
+| `scripts/07_carga_demo.sql` | Carga de 2 tutores, 2 veterinários, 3 animais e 6 consultas **via pacote** |
+| `scripts/08_testes_execucao.sql` | 21 verificações `PASSOU/FALHOU` (caminho feliz e exceções) |
+| `gerar-migration.sh` | Monta `migrations/V10__pacotes_plsql_auditoria.sql` a partir de `scripts/01..05` |
+| `DDL.txt` | Schema Oracle consolidado (V1–V8) |
+| `migrations/` | Cópia V1–V10 das migrations Flyway aplicadas pelo Java (ver `migrations/README.md`) |
+| `modelagem-db/` | Modelo lógico e relacional (Data Modeler + PNG) |
+| `procedures/` | `SP_INS_*` soltas da Sprint 3, mantidas só porque `blocos-anonimos/insercoes-extra.sql` as chama; substituídas por `PKG_VETLY_CARGA` |
+| `blocos-anonimos/`, `relatorios/` | Blocos PL/SQL e relatórios SQL de sprints anteriores (evidência de scripts) |
+| `docs/arquitetura-banco.md` | Documento de arquitetura e decisões de modelagem |
+| `mongo/01_exportar_dataset.sql` | `SPOOL` do dataset NDJSON (SQL*Plus/SQLcl) |
+| `mongo/dataset/animais.ndjson` | Dataset exportado (dados da carga demo) |
+| `mongo/02_importar_mongo.js` | Cria a coleção com validador de schema e índices e importa |
+| `mongo/03_consultas_demo.js` | Consultas de demonstração com o equivalente relacional |
+| `mongo/docker-compose.yml` | MongoDB local para a demonstração |
 
----
+## Como executar
 
-## Objetivos para o Tutor
+### 1. Banco relacional
 
-A plataforma busca melhorar a experiência do tutor através de:
+Em schema Oracle com as migrations V1–V9 aplicadas (o Flyway do app aplica V1–V10 sozinho):
 
-* Acompanhamento do histórico clínico do animal;
-* Upload digital de resultados de exames;
-* Facilidade de comunicação com a clínica;
-* Interface acessível e intuitiva;
-* Maior transparência durante o tratamento.
-
----
-
-# Arquitetura Tecnológica
-
-## Backend
-
-O backend está sendo desenvolvido utilizando:
-
-* Java
-* Spring Boot
-* Spring Security
-* JPA/Hibernate
-* Oracle Database
-
-A escolha do ecossistema Spring foi realizada devido à robustez, maturidade e capacidade de escalabilidade da plataforma.
-
-O Spring Boot fornece:
-
-* Estrutura modular;
-* Facilidade de manutenção;
-* Facilidade de integração;
-* Suporte nativo a autenticação e autorização;
-* Padronização arquitetural.
-
----
-
-## Frontend
-
-O frontend está sendo desenvolvido em React Native.
-
-A escolha do React Native foi motivada por:
-
-* Desenvolvimento multiplataforma;
-* Boa experiência mobile;
-* Alta produtividade;
-* Grande ecossistema;
-* Facilidade de evolução futura.
-
-A interface foi projetada com foco em:
-
-* Clareza visual;
-* Navegação simples;
-* Acessibilidade;
-* Baixa fricção operacional;
-* Experiência intuitiva para tutores e veterinários.
-
----
-
-# Arquitetura de Segurança
-
-## Tabela de Usuários
-
-Uma das principais decisões arquiteturais do projeto foi a criação da entidade `TB_USUARIO`.
-
-Essa decisão foi tomada para desacoplar os dados de autenticação dos dados pessoais do sistema.
-
-A tabela de usuários é responsável por:
-
-* Controle de autenticação;
-* Armazenamento de senha hash;
-* Gerenciamento de roles;
-* Controle de ativação de contas;
-* Segurança de acesso.
-
----
-
-## Controle de Roles
-
-O sistema possui diferentes perfis de acesso:
-
-* ADMIN
-* VETERINARIO
-* TUTOR
-
-As permissões são validadas em duas camadas:
-
-### Backend
-
-Através do Spring Security.
-
-### Banco de Dados
-
-Através de constraints e regras estruturais.
-
-Essa abordagem aumenta:
-
-* Segurança;
-* Integridade;
-* Controle de acesso;
-* Robustez do sistema.
-
----
-
-# Modelagem de Banco de Dados
-
-## Filosofia da Modelagem
-
-O banco de dados foi modelado com foco em:
-
-* Normalização;
-* Escalabilidade;
-* Integridade relacional;
-* Redução de redundância;
-* Evolução futura.
-
-A modelagem foi estruturada focando na Terceira Forma Normal (3FN), buscando evitar:
-
-* Dependências transitivas;
-* Redundância de dados;
-* Anomalias de atualização;
-* Dados derivados armazenados desnecessariamente.
-
----
-
-# Estrutura Clínica
-
-## Animal e Prontuário
-
-Cada animal possui um prontuário único.
-
-O prontuário foi modelado como o agregador principal do histórico clínico do animal.
-
-O relacionamento principal ocorre da seguinte forma:
-
-```text
-PRONTUARIO
-   -> ANIMAL
-       -> CONSULTAS
-            -> EVOLUCOES
-            -> SOLICITACOES_EXAME
-                 -> ITENS_EXAME
-                      -> ANEXOS
+```sql
+@scripts/01_pkg_vetly_log.sql
+@scripts/02_pkg_vetly_validacao.sql
+@scripts/03_pkg_vetly_json.sql
+@scripts/04_pkg_vetly_relatorio.sql
+@scripts/05_trigger_auditoria.sql
+@scripts/06_pkg_vetly_carga.sql
+@scripts/07_carga_demo.sql
+@scripts/08_testes_execucao.sql      -- SET SERVEROUTPUT ON
 ```
 
-Essa abordagem evita redundância e permite que o prontuário centralize o histórico completo de forma indireta.
+Chamada do relatório de qualquer cliente:
 
----
-
-# Consultas e Evolução Clínica
-
-## Evolução Clínica
-
-A entidade de evolução clínica foi modelada inicialmente com relacionamento 1:1 com consulta.
-
-Essa decisão foi tomada considerando o escopo do MVP.
-
-Atualmente:
-
-```text
-CONSULTA 1:1 EVOLUCAO_CLINICA
+```sql
+VAR rc REFCURSOR
+EXEC PKG_VETLY_RELATORIO.prc_consultas_vet_status(NULL, :rc)
+PRINT rc
 ```
 
-No entanto, a arquitetura permite evolução futura simples para:
+### 2. Exportar para JSON
 
-```text
-CONSULTA 1:N EVOLUCAO_CLINICA
+```bash
+cd mongo
+export NLS_LANG=.AL32UTF8
+sqlplus USUARIO/SENHA@//HOST:1521/SERVICO @01_exportar_dataset.sql   # gera dataset/animais.ndjson
 ```
 
-caso seja necessário registrar múltiplas evoluções clínicas por consulta.
+### 3. Importar no MongoDB
 
----
-
-# Sistema de Exames
-
-## Motivação Arquitetural
-
-Os exames não são realizados diretamente pela plataforma.
-
-A solução foi modelada para representar:
-
-* Solicitação de exames;
-* Upload de resultados externos;
-* Acompanhamento clínico;
-* Histórico médico.
-
----
-
-## Estrutura da Solicitação de Exames
-
-O sistema foi dividido em:
-
-### TB_SOLICITACAO_EXAME
-
-Representa o cabeçalho da solicitação.
-
-Cada consulta gera uma única solicitação de exames.
-
-```text
-CONSULTA 1:1 SOLICITACAO_EXAME
+```bash
+cd mongo
+docker compose up -d
+mongosh "mongodb://localhost:27017/vetly" --file 02_importar_mongo.js
+mongosh "mongodb://localhost:27017/vetly" --file 03_consultas_demo.js
 ```
 
----
+Alternativa só com ferramentas de linha de comando: `mongoimport --db vetly --collection animais --file dataset/animais.ndjson`
+(as datas ficam como string; o script `.js` as converte para `Date` e aplica validador e índices).
 
-### TB_SOLICITACAO_EXAME_ITEM
+## Modelo no MongoDB
 
-Representa cada exame individual solicitado.
+Uma coleção, `animais`, um documento por animal, com **tutor e consultas embutidos**:
 
-Exemplo:
-
-* Hemograma;
-* Ultrassom;
-* Raio-X;
-* Exames laboratoriais.
-
-Relacionamento:
-
-```text
-SOLICITACAO_EXAME 1:N SOLICITACAO_EXAME_ITEM
+```json
+{ "_id": "…", "nome": "Thor", "especie": "CAO", "pesoKg": 31.5,
+  "tutor": { "idTutor": "…", "nome": "…", "telefone": "…" },
+  "consultas": [ { "idConsulta": "…", "dataHora": ISODate, "status": "REALIZADA",
+                   "valor": 250, "veterinario": { "idVeterinario": "…", "nome": "…" } } ] }
 ```
 
-Essa separação permite:
-
-* Controle individual de status;
-* Controle de datas;
-* Controle de resultados;
-* Upload individual de anexos;
-* Escalabilidade futura.
-
----
-
-# Upload de Resultados de Exames
-
-## TB_ANEXO_EXAME
-
-Os anexos de exames foram separados em uma entidade própria.
-
-Essa decisão foi tomada para permitir:
-
-* Múltiplos arquivos por exame;
-* PDFs;
-* Imagens;
-* Laudos laboratoriais;
-* Escalabilidade futura.
-
-Relacionamento:
-
-```text
-SOLICITACAO_EXAME_ITEM 1:N ANEXO_EXAME
-```
-
-O tutor é responsável pelo upload dos resultados diretamente na plataforma.
-
-Essa funcionalidade reduz fricção operacional e melhora a comunicação clínica.
-
----
-
-# Robustez Arquitetural
-
-## Desacoplamento de Responsabilidades
-
-O sistema foi modelado utilizando separação clara de responsabilidades.
-
-Exemplos:
-
-* Usuário ≠ Pessoa;
-* Consulta ≠ Evolução;
-* Solicitação ≠ Item de exame;
-* Item de exame ≠ Anexo.
-
-Essa abordagem reduz acoplamento e facilita:
-
-* manutenção;
-* testes;
-* evolução futura;
-* escalabilidade.
-
----
-
-# Escalabilidade do Projeto
-
-A arquitetura foi projetada para permitir evolução gradual sem necessidade de refatorações estruturais severas.
-
----
-
-# Roadmap de Evolução
-
-## 1. IA para Geração de Evolução Clínica
-
-Um dos principais objetivos futuros da plataforma é integrar IA ao fluxo clínico.
-
-A ideia consiste em:
-
-* analisar dados da consulta;
-* sugerir evolução clínica;
-* reduzir tempo de preenchimento;
-* auxiliar o veterinário.
-
----
-
-## Estrutura Prevista
-
-Será necessária uma entidade específica para armazenar análises geradas por IA.
-
-Exemplo conceitual:
-
-```text
-TB_ANALISE_IA
-```
-
-Possíveis campos:
-
-* Prompt utilizado;
-* Resposta gerada;
-* Data da análise;
-* Veterinário responsável;
-* Consulta relacionada;
-* Status de aprovação.
-
----
-
-# 2. Sistema de Receitas Médicas
-
-O roadmap inclui implementação de receitas veterinárias digitais.
-
-Arquitetura prevista:
-
-```text
-CONSULTA 1:1 RECEITA
-RECEITA 1:N RECEITA_ITEM
-```
-
-Essa estrutura permitirá:
-
-* Prescrição digital;
-* Histórico medicamentoso;
-* Controle terapêutico;
-* Evolução futura para integração comercial.
-
----
-
-# 3. Integração com Farmácias Parceiras
-
-O sistema deverá futuramente sugerir farmácias veterinárias parceiras próximas ao tutor.
-
-Para isso, novas entidades poderão ser adicionadas:
-
-* TB_ENDERECO;
-* TB_FARMACIA_VETERINARIA;
-* TB_PARCEIRO_COMERCIAL.
-
----
-
-# Estrutura de Endereços
-
-A arquitetura prevê futura normalização de endereços para:
-
-* tutores;
-* veterinários;
-* clínicas;
-* farmácias parceiras.
-
-A modelagem futura poderá utilizar:
-
-```text
-TB_ENDERECO
-```
-
-centralizando:
-
-* CEP;
-* cidade;
-* estado;
-* latitude;
-* longitude;
-* logradouro.
-
-Essa abordagem facilitará:
-
-* geolocalização;
-* integração com mapas;
-* busca por parceiros próximos;
-* expansão da plataforma.
-
----
-
-# Decisões de Escalabilidade
-
-Durante o desenvolvimento, diversas decisões foram tomadas pensando em médio e longo prazo.
-
-## Principais decisões:
-
-### Separação entre autenticação e dados pessoais;
-
-### Estrutura modular de exames;
-
-### Uso de tabelas associativas;
-
-### Modelagem próxima da 3FN;
-
-### Separação de anexos;
-
-### Preparação para IA;
-
-### Preparação para integrações futuras.
-
----
-
-# Benefícios Esperados para a Clyvo Vet
-
-A solução busca gerar impacto operacional e comercial.
-
-## Benefícios operacionais
-
-* Menor tempo gasto em tarefas administrativas;
-* Melhor organização dos veterinarios;
-* Histórico centralizado;
-* Maior controle dos exames;
-* Facilidade de acompanhamento.
-
----
-
-## Benefícios para os tutores
-
-* Melhor experiência digital;
-* Transparência clínica;
-* Facilidade de acesso ao histórico;
-* Upload simples de exames;
-* Maior proximidade com a clínica.
-
----
-
-## Benefícios comerciais
-
-A estratégia da plataforma busca:
-
-* aumentar fidelização;
-* aumentar recorrência;
-* melhorar retenção;
-* aumentar frequência de consultas;
-* aumentar receita da empresa.
-
----
-
-# Considerações Finais
-
-O projeto foi desenvolvido buscando equilíbrio entre:
-
-* simplicidade para o MVP;
-* robustez arquitetural;
-* escalabilidade futura.
-
-A arquitetura atual já permite evolução consistente para funcionalidades avançadas sem necessidade de reconstrução estrutural do sistema.
-
-O modelo foi pensado não apenas como um sistema acadêmico, mas como uma base sólida para uma futura plataforma veterinária escalável, segura e preparada para integrações inteligentes.
+Por que embutir: a ficha do animal sempre é lida com tutor e consultas (no Oracle são 4 `JOIN`s
+sobre 6 tabelas), e a lista de consultas de um animal é pequena e limitada — não cresce sem fim.
+O que **não** foi embutido de propósito: prontuário e exames (volume e ciclo de vida próprios).
+
+## Como foi validado
+
+Executado em Oracle Free 23ai (container) e MongoDB 7: compilação sem erros, 08_testes_execucao
+com todos os casos `PASSOU`, o `TOTAL GERAL` do relatório Oracle (6 consultas / R$ 1.200,00) igual
+ao total agregado no Mongo, e o app Java subindo contra um schema **vazio** com o Flyway
+aplicando V1–V10 e a tela de relatório respondendo.
+
+## Pendências fora deste diretório
+
+- **Modelagem lógica/física:** reentregar `modelagem-db/` com as correções do professor da Sprint 3
+  (o feedback não está no repositório).
+- **Vídeo:** execução da procedure pela aplicação, inserção no relacional, exportação JSON e
+  importação no Mongo — roteiro em `docs/ENTREGA-FINAL-SPRINT4.md` do repositório Java.
+- **Oracle da FIAP:** a V10 ainda não foi aplicada lá; ela roda sozinha no próximo deploy do Java.
