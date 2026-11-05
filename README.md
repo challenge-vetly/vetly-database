@@ -1,5 +1,7 @@
 # Banco de Dados — Sprint 4 (Mastering Relational and Non-Relational Database)
 
+Link do video de apresentacao do projeto final: 
+
 Entrega final de Banco de Dados do Challenge Vetly. Evolui a Sprint 3 (funções, procedures e
 trigger soltos, em schema autocontido) para **objetos empacotados no schema real**, consumidos
 pelo painel Java (repositório [`mvc-vetly-java`](https://github.com/Duartegdm/vetly-mvc)), e acrescenta a exportação **Oracle → JSON → MongoDB**.
