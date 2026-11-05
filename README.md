@@ -36,7 +36,7 @@ O painel Java → `RelatorioConsultasService` chama `PKG_VETLY_RELATORIO` por
 resultado **não mude conforme onde o Java foi publicado**:
 
 - **O schema viaja com a aplicação.** Os pacotes e a trigger chegam pela migration
-  `V10__pacotes_plsql_auditoria.sql` (`migrations/` aqui; `src/main/resources/db/migration/` no Java; gerada de `scripts/01..05` por `gerar-migration.sh`). Qualquer ambiente —
+  `V10__pacotes_plsql_auditoria.sql` (`src/main/resources/db/migration/` no repositório Java; fonte em `scripts/01..05`). Qualquer ambiente —
   Web App, ACI, máquina local, schema novo ou existente — recebe os objetos quando o Flyway roda.
 - **Sem dependência de servidor.** Nada usa `UTL_FILE`, `DIRECTORY`, `DBMS_OUTPUT` nem caminho de
   arquivo no host do Oracle. O JSON volta como `CLOB` e é gravado pelo cliente.
@@ -57,17 +57,15 @@ resultado **não mude conforme onde o Java foi publicado**:
 | `scripts/06_pkg_vetly_carga.sql` | `PKG_VETLY_CARGA` (**gerado** de `procedures/procedures_carga.sql`) |
 | `scripts/07_carga_demo.sql` | Carga de 2 tutores, 2 veterinários, 3 animais e 6 consultas **via pacote** |
 | `scripts/08_testes_execucao.sql` | 21 verificações `PASSOU/FALHOU` (caminho feliz e exceções) |
-| `gerar-migration.sh` | Monta `migrations/V10__pacotes_plsql_auditoria.sql` a partir de `scripts/01..05` |
-| `DDL.txt` | Schema Oracle consolidado (V1–V8) |
-| `migrations/` | Cópia V1–V10 das migrations Flyway aplicadas pelo Java (ver `migrations/README.md`) |
+| `DDL.txt` | Schema Oracle consolidado (migrations V1–V10 do Java; V9 só insere dados; inclui `TB_AUDITORIA`/`SQ_AUDITORIA` da V10) |
 | `modelagem-db/` | Modelo lógico e relacional (Data Modeler + PNG) |
 | `procedures/` | `SP_INS_*` soltas da Sprint 3, mantidas só porque `blocos-anonimos/insercoes-extra.sql` as chama; substituídas por `PKG_VETLY_CARGA` |
 | `blocos-anonimos/`, `relatorios/` | Blocos PL/SQL e relatórios SQL de sprints anteriores (evidência de scripts) |
 | `docs/arquitetura-banco.md` | Documento de arquitetura e decisões de modelagem |
 | `mongo/01_exportar_dataset.sql` | `SPOOL` do dataset NDJSON (SQL*Plus/SQLcl) |
-| `mongo/dataset/animais.ndjson` | Dataset exportado (dados da carga demo) |
+| `mongo/dataset/animais.ndjson` | Dataset exportado do banco relacional (`01_exportar_dataset.sql`) |
 | `mongo/02_importar_mongo.js` | Cria a coleção com validador de schema e índices e importa |
-| `mongo/03_consultas_demo.js` | Consultas de demonstração com o equivalente relacional |
+| `mongo/03_consultas.js` | Consultas que leem os valores do próprio dataset (sem ids fixos), com o equivalente relacional |
 | `mongo/docker-compose.yml` | MongoDB local para a demonstração |
 
 ## Como executar
@@ -109,7 +107,7 @@ sqlplus USUARIO/SENHA@//HOST:1521/SERVICO @01_exportar_dataset.sql   # gera data
 cd mongo
 docker compose up -d
 mongosh "mongodb://localhost:27017/vetly" --file 02_importar_mongo.js
-mongosh "mongodb://localhost:27017/vetly" --file 03_consultas_demo.js
+mongosh "mongodb://localhost:27017/vetly" --file 03_consultas.js
 ```
 
 Alternativa só com ferramentas de linha de comando: `mongoimport --db vetly --collection animais --file dataset/animais.ndjson`

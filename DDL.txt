@@ -674,6 +674,24 @@ CREATE INDEX TB_PRONTUARIO_ANIMAL_IDX ON TB_PRONTUARIO (TB_ANIMAL_ID_ANIMAL);
 ALTER TABLE TB_PRONTUARIO ADD CONSTRAINT TB_PRONTUARIO_ORIGINAL_FK FOREIGN KEY
     (TB_PRONTUARIO_ID_ORIGINAL) REFERENCES TB_PRONTUARIO (ID_PRONTUARIO);
 
+-- V10 — Sprint 4: trilha de auditoria DML de TB_CONSULTA (preenchida por TRG_AUD_CONSULTA).
+-- Na migration o CREATE e idempotente (ignora ORA-00955); aqui fica o DDL puro.
+CREATE TABLE TB_AUDITORIA (
+    ID_AUDITORIA        NUMBER          NOT NULL,
+    NM_TABELA           VARCHAR2(30)    NOT NULL,
+    NM_USUARIO          VARCHAR2(100)   NOT NULL,
+    TP_OPERACAO         VARCHAR2(10)    NOT NULL,
+    DT_HR_OPERACAO      DATE            NOT NULL,
+    DS_VALORES_ANTIGOS  VARCHAR2(4000),
+    DS_VALORES_NOVOS    VARCHAR2(4000),
+    CONSTRAINT TB_AUDITORIA_PK PRIMARY KEY (ID_AUDITORIA),
+    CONSTRAINT CK_TP_OPERACAO_AUDITORIA CHECK (TP_OPERACAO IN ('INSERT', 'UPDATE', 'DELETE'))
+);
+
+CREATE SEQUENCE SQ_AUDITORIA START WITH 1 INCREMENT BY 1 NOCACHE;
+
+COMMENT ON TABLE TB_AUDITORIA IS 'Trilha de auditoria DML de TB_CONSULTA, preenchida por TRG_AUD_CONSULTA';
+
 -- Oracle SQL Developer Data Modeler Summary Report:
 -- 
 -- CREATE TABLE                            15
@@ -717,7 +735,10 @@ ALTER TABLE TB_PRONTUARIO ADD CONSTRAINT TB_PRONTUARIO_ORIGINAL_FK FOREIGN KEY
 -- ERRORS                                   0
 -- WARNINGS                                 0
 -- ============================================================================
--- V9 (seed de TB_ESPECIE/TB_ESPECIALIDADES_VET) e V10 (pacotes PKG_VETLY_*, TB_AUDITORIA,
--- TRG_AUD_CONSULTA) nao alteram as tabelas acima; ver src/main/resources/db/migration/ e
--- database/scripts/. Toda migration nova que altere tabelas deve ser replicada aqui.
+-- V9 (seed de TB_ESPECIE/TB_ESPECIALIDADES_VET) so insere dados e nao altera o schema.
+-- V10 alem de TB_AUDITORIA/SQ_AUDITORIA (acima) cria objetos PL/SQL que nao constam neste
+-- arquivo: PKG_VETLY_LOG, PKG_VETLY_VALIDACAO, PKG_VETLY_JSON, PKG_VETLY_RELATORIO e a trigger
+-- TRG_AUD_CONSULTA (fonte em scripts/01..05; migration em
+-- mvc-vetly-java/src/main/resources/db/migration/). Toda migration nova que altere tabelas
+-- deve ser replicada aqui.
 -- ============================================================================
